@@ -10,7 +10,7 @@ import jakarta.persistence.Id;
 
 @Entity(name = "tb_account")
 public class Account {
-    // Attributes
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,23 +20,50 @@ public class Account {
 
     private String agency;
 
-    @Column(scale = 13, precision = 2)
+    @Column(precision = 13, scale = 2)
     private BigDecimal balance;
 
-    @Column(name = "additional_limit", scale = 13, precision = 2)
+    @Column(name = "additional_limit", precision = 13, scale = 2)
     private BigDecimal limit;
 
-    // Getters
-    public Long getId() {return id;}
-    public String getNumber() {return number;}
-    public String getAgency() {return agency;}
-    public BigDecimal getBalance() {return balance;}
-    public BigDecimal getLimit() {return limit;}
+    public Long getId() {
+        return id;
+    }
 
-    // Setters
-    public void setId(Long id) {this.id = id;}
-    public void setNumber(String number) {this.number = number;}
-    public void setAgency(String agency) {this.agency = agency;}
-    public void setBalance(BigDecimal balance) {this.balance = balance;}
-    public void setLimit(BigDecimal limit) {this.limit = limit;}
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public String getAgency() {
+        return agency;
+    }
+
+    public void setAgency(String agency) {
+        this.agency = agency;
+    }
+
+    public BigDecimal getBalance() {
+        return balance;
+    }
+
+    public void setBalance(BigDecimal balance) {
+        this.balance = balance;
+    }
+
+    public BigDecimal getLimit() {
+        return limit;
+    }
+
+    public void setLimit(BigDecimal limit) {
+        this.limit = limit;
+    }
+
 }
